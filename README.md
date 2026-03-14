@@ -61,13 +61,9 @@ FETEC2025/
 
 
 │   ├── uploads/
-
 │   ├── aluno_login.php
-
 │   ├── aluno.php
-
 │   ├── sair.php
-
 │   └── upload_tcc.php
 
 │
