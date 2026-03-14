@@ -86,9 +86,13 @@ StartTCC/
 ├── selection.html
 ├── script.js
 └── login_teste.php
+
 ⚙️ Como Executar o Projeto
+
 1️⃣ Clonar o repositório
+
 git clone https://github.com/seu-usuario/starttcc.git
+
 2️⃣ Colocar o projeto no servidor local
 
 Coloque a pasta dentro do diretório do servidor.
