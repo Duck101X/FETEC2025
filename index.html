@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auxílio TCC - Login</title>
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+
+        /* =======================================================
+           1. ESTILOS GERAIS
+           ======================================================= */
+        body { 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #161616; /* Fundo escuro de fallback */
+            color: #ffffff;
+            
+            /* Fundo com imagem e blur */
+            background-image: url('./img/Fundo.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            /* backdrop-filter: blur(5px); */ /* Pode ser pesado no mobile */
+            position: relative;
+            overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+        }
+
+        /* Overlay do gradiente */
+        body::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background: linear-gradient(
+                to right,
+                rgb(22, 22, 22) 30%,
+                rgba(22, 22, 22, 0.9) 60%,
+                rgba(22, 22, 22, 0.2) 100%
+            );
+        }
+
+        .logo {
+            height: 90px;
+            width: auto;
+            margin-left: 20px;
+        }
+
+        /* =======================================================
+           2. NAVEGAÇÃO
+           ======================================================= */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #0c0c0c;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+            z-index: 10;
+        }
+
+        .centro {
+            flex: 1;
+            text-align: center;
+        }
+
+        .tituloSite {
+            color: #ffffff;
+            font-size: 26px;
+            margin: 0;
+        }
+
+        .butnav {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #ebebeb;
+            font-weight: bold;
+            padding: 8px 16px;
+            border: 2px solid #ebebeb;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .butnav:hover {
+            background-color: #ebebeb;
+            color: #181818;
+        }
+
+        /* =======================================================
+           3. CONTEÚDO PRINCIPAL
+           ======================================================= */
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: initial;
+            align-items: initial;
+            padding: 10% 7%;
+            width: 50%; /* Limita a largura do conteúdo no desktop */
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 2.5em;
+        }
+
+        p {
+            color: #d3d3d3;
+            line-height: 1.6;
+        }
+
+        .butcontent {
+            display: inline-block;
+            margin-top: 20px;
+            margin-right: 15px; /* Adicionado espaço entre os botões */
+            text-decoration: none;
+            color: #181818;
+            font-weight: bold;
+            padding: 10px 20px;
+            background-color: #ebebeb;
+            border: 2px solid #ebebeb;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .butcontent:hover {
+            background-color: #181818;
+            color: #ebebeb;
+        }
+        
+        /* =======================================================
+           4. RESPONSIVIDADE (MOBILE - abaixo de 768px)
+           ======================================================= */
+        @media (max-width: 768px) {
+            
+            /* 4.1. Overlay de Fundo */
+            body::after {
+                /* Ajusta o gradiente para ser vertical, melhorando a visibilidade */
+                background: linear-gradient(
+                    to top, 
+                    rgb(22, 22, 22) 10%, 
+                    rgba(22, 22, 22, 0.9) 40%, 
+                    rgba(22, 22, 22, 0.5) 70%, 
+                    rgba(22, 22, 22, 0) 100%
+                );
+            }
+
+            /* 4.2. Navegação (Nav) */
+            nav {
+                /* Empilha logo, título e botão em mobile */
+                flex-direction: column; 
+                padding: 10px 0;
+            }
+
+            .navesq, .navdir {
+                width: 100%;
+                text-align: center;
+                margin-top: 5px;
+            }
+            
+            .logo {
+                height: 50px; /* Reduz o logo */
+                margin: 0;
+            }
+
+            .tituloSite {
+                font-size: 22px;
+                padding: 5px 0 10px 0;
+            }
+
+            .butnav {
+                margin: 5px auto;
+            }
+
+
+            /* 4.3. Conteúdo Principal */
+            main {
+                width: 100%; /* Conteúdo ocupa a tela inteira */
+                padding: 10% 5%; /* Padding ajustado */
+                box-sizing: border-box; 
+                
+                /* Centraliza os elementos no mobile */
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .contEsq {
+                width: 100%; /* Faz o container de texto usar toda a largura */
+            }
+
+            h1 {
+                text-align: center;
+                font-size: 2em;
+            }
+
+            p {
+                text-align: justify; /* Melhora a leitura do texto longo */
+                padding: 0 5px;
+            }
+
+            /* 4.4. Botões de Ação */
+            .butcontent {
+                display: block; /* Transforma em bloco (um em cima do outro) */
+                width: 90%;
+                margin: 10px auto;
+                text-align: center;
+            }
+            
+            /* 4.5. Classe 'center-screen' para a tela de login (não está no HTML atual, mas é bom ter) */
+            .center-screen {
+                padding-top: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div class="navesq">
+                <img src="./img/logo.png" alt="Logo" class="logo">
+            </div>
+            
+            <div class="centro">
+                <h1 class="tituloSite">StartTCC</h1>
+            </div>
+
+            <div class="navdir">
+                <a href="./selection.html" class="butnav">Login</a>
+            </div>
+        </nav>
+
+        <main>
+            <div class="contEsq">
+                <h1>Bem-vindo(a)</h1>
+                <p>
+                    A nossa plataforma é um ambiente digital inovador desenvolvido para facilitar a interação entre
+                    alunos e professores no processo de envio, acompanhamento e correção de TCCs. Aqui, você pode enviar
+                    seus arquivos, receber feedbacks profissionais, acompanhar revisões e evoluir na produção do seu
+                    trabalho acadêmico com muito mais praticidade.
+                    <br><br>
+                    Nossa missão é oferecer um espaço organizado, seguro e intuitivo, onde alunos possam compartilhar
+                    suas produções e professores tenham à disposição ferramentas eficientes para orientar, revisar e
+                    aprovar TCCs. É um sistema pensado para tornar a comunicação mais clara, direta e sem complicações,
+                    permitindo que cada etapa do processo seja acompanhada em tempo real.
+                    <br><br>
+                    Descubra uma forma moderna de gerenciar TCCs: conecte-se com professores, acompanhe suas correções,
+                    receba orientações personalizadas e aproveite recursos desenvolvidos especialmente para tornar sua
+                    jornada acadêmica mais leve e produtiva. Aqui, cada usuário faz parte de uma comunidade
+                    colaborativa, criada para ajudar você a alcançar sua melhor versão acadêmica!
+                </p>
+                <p>
+                    Junte-se à comunidade StartTCC e comece a gerenciar seu projeto agora mesmo!
+                </p>
+
+                <a href="./aluno/aluno_login.php" class="butcontent">Aluno</a>
+                <a href="./professor/professor_login.php" class="butcontent">Professor</a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

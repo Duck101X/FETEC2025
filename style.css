@@ -1,0 +1,166 @@
+
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background: #131313;
+color: #fff;
+}
+.center {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+.btn {
+padding: 12px 25px;
+margin: 10px;
+border: none;
+border-radius: 8px;
+background: linear-gradient(145deg, #333, #1a1a1a);
+color: #fff;
+cursor: pointer;
+transition: 0.3s;
+width: 200px;
+}
+.btn:hover { transform: scale(1.05); }
+.btn-secondary {
+padding: 10px 20px;
+background: #444;
+border-radius: 8px;
+border: none;
+color: #fff;
+cursor: pointer;
+}
+.input {
+width: 260px;
+padding: 10px;
+margin: 8px 0;
+border-radius: 6px;
+border: 1px solid #555;
+background: #1a1a1a;
+color: white;
+}
+.menu {
+width: 220px;
+background: #111;
+height: 100vh;
+padding-top: 20px;
+position: fixed;
+left: 0;
+top: 0;
+}
+.menu button {
+width: 90%;
+margin: 10px auto;
+display: block;
+background: #222;
+}
+.content {
+margin-left: 240px;
+padding: 20px;
+}
+.hidden { display: none; }
+.fade-in {
+animation: fade 0.4s ease;
+}
+@keyframes fade {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.centro {
+    flex: 1;
+    text-align: center;
+}
+
+.tituloSite {
+    color: #ffffff;
+    font-size: 26px;
+    margin: 0;
+}
+
+/* --- Melhorias Mobile (APENAS PARA TELAS MENORES QUE 768px) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Corpo e Fundo */
+    body {
+        /* Desativa o backdrop-filter se estiver causando problemas de performance */
+        backdrop-filter: none;
+    }
+
+    /* 2. Overlay do gradiente */
+    body::after {
+        /* Muda o gradiente para cobrir a tela inteira e ser mais uniforme ou sutil */
+        background: linear-gradient(
+            to top, /* Gradiente de baixo para cima */
+            rgb(22, 22, 22) 10%, 
+            rgba(22, 22, 22, 0.9) 30%, 
+            rgba(22, 22, 22, 0.5) 60%, 
+            rgba(22, 22, 22, 0) 100% /* Torna o topo transparente */
+        );
+    }
+    
+    /* 3. Navegação (Nav) */
+    nav {
+        /* Permite que os itens empilhem se necessário e centraliza o logo/título */
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 10px;
+    }
+
+    .navesq {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .logo {
+        height: 60px; /* Reduz o tamanho do logo no mobile */
+        margin: 10px 0;
+    }
+    
+    .centro {
+        order: -1; /* Move o título para cima, se for a intenção */
+    }
+
+    .navdir {
+        margin-top: 15px;
+    }
+
+    /* 4. Conteúdo Principal */
+    main {
+        width: 90%; /* Ocupa quase a tela inteira */
+        padding: 10% 5%; /* Padding ajustado para telas menores */
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center; /* Centraliza texto e títulos */
+    }
+
+    /* Alinhamento dos blocos de texto */
+    .contEsq {
+        width: 100%;
+    }
+    
+    /* Alinhamento dos botões de ação */
+    .contEsq a.butcontent {
+        display: block; /* Botões em bloco ocupam a largura total */
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    h1 {
+        font-size: 1.8em; /* Ajusta o tamanho do título principal */
+    }
+
+    p {
+        text-align: left; /* Mantém o parágrafo justificado para melhor leitura */
+        font-size: 0.95em;
+    }
+}

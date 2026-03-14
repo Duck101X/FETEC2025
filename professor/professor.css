@@ -1,0 +1,620 @@
+/* =======================================================
+    1. VARIÁVEIS CSS (TEMA DARK MODE)
+    ======================================================= */
+:root {
+    /* Cores principais */
+    --color-bg-primary: #0d0d0d; /* Fundo principal */
+    --color-bg-secondary: #0f0f0f; /* Fundo de caixas e menu */
+    --color-bg-card: #151515; /* Fundo de cards (Review/Upload) */
+    --color-text-light: #fff; /* Texto principal */
+    --color-text-secondary: #ccc; /* Texto secundário/rodapé */
+    --color-border-dark: #1d1d1d; /* Borda escura */
+    --color-border-light: #333; /* Borda de inputs */
+    
+    /* Cores de destaque */
+    --color-accent-blue: #4da3ff; /* Links e destaque (Aluno) */
+    --color-accent-review: #ff9800; /* Destaque de Revisão (Professor) */
+    --color-accent-comment: #66bb6a; /* Destaque de Comentário (Verde) */
+    --color-accent-delete: #d62828; /* Destaque de Excluir (Vermelho) */
+    
+    /* Outros */
+    --transition-speed: 0.25s;
+    --shadow-dark: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* =======================================================
+    2. BASE & UTILIDADES
+    ======================================================= */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--color-bg-primary);
+    color: var(--color-text-light);
+    font-size: 14px;
+}
+
+/* Centralização para Login ou páginas iniciais */
+.center, .center-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h2 { /* Estilo geral para títulos de seção */
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #222;
+    color: var(--color-text-light);
+    font-size: 1.8em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Animações */
+.fade-in { animation: fade 0.4s ease; }
+.hidden { display: none; }
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Estilo para a caixa de mensagem de feedback */
+.msgBox {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--color-accent-comment);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-size: 16px;
+    display: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    animation: fadeIn .3s ease;
+}
+.msgBox.error {
+    background: var(--color-accent-delete);
+}
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* =======================================================
+    3. BOTÕES (Neomorfismo/Soft UI)
+    ======================================================= */
+/* Botão Principal */
+.btn {
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    width: 220px;
+    background: linear-gradient(145deg, #1a1a1a, #0e0e0e);
+    color: var(--color-text-light);
+    cursor: pointer;
+    transition: var(--transition-speed);
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    box-shadow: 
+        3px 3px 12px rgba(0,0,0,0.5),
+        -3px -3px 12px rgba(40,40,40,0.15);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(145deg, #262626, #111);
+}
+
+/* Botão Secundário (ou pequeno) */
+.btn-secondary, .btn-small {
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #2e2e2e;
+    color: var(--color-text-light);
+    transition: var(--transition-speed);
+    border: 1px solid #444;
+}
+
+.btn-secondary:hover, .btn-small:hover {
+    background: #3a3a3a;
+}
+
+/* Botão de Excluir */
+.btn-delete {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #303030, #131313);
+    color: var(--color-text-light);
+    text-align: center;
+    transition: var(--transition-speed);
+    font-weight: bold;
+    box-shadow: var(--shadow-dark);
+    text-decoration: none;
+    margin-top: 5px; 
+}
+
+.btn-delete:hover {
+    background: var(--color-accent-delete);
+    transform: translateY(-2px);
+}
+
+/* Novo estilo para os botões dentro das caixas de edição de aluno */
+.btn-edit-aluno {
+    width: 100%; 
+    margin: 5px 0; 
+    box-sizing: border-box; 
+}
+
+/* =======================================================
+    4. INPUTS E TEXTAREAS
+    ======================================================= */
+.input {
+    width: 270px;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid var(--color-border-light);
+    background: #161616;
+    color: var(--color-text-light);
+    transition: var(--transition-speed);
+}
+
+.input:focus, textarea:focus {
+    border-color: #777;
+    background: #1e1e1e;
+    outline: none;
+}
+
+/* =======================================================
+    5. LAYOUT GERAL (SIDEBAR RETRÁTIL & CONTEÚDO)
+    ======================================================= */
+/* Sidebar Fixo - Base */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: var(--color-bg-secondary);
+    padding-top: 25px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    border-right: 1px solid var(--color-border-dark);
+    box-shadow: 5px 0 20px rgba(0,0,0,0.35);
+    box-sizing: border-box; 
+    overflow-x: hidden;
+    z-index: 1000;
+    
+    /* Adiciona transição para o efeito retrátil */
+    transition: width 0.3s ease, transform 0.3s ease;
+}
+
+/* Botões de Navegação (Dentro da Sidebar) */
+.sidebar button[type="button"] {
+    width: 85%;
+    padding: 14px;
+    margin: 15px auto;
+    border: none;
+    border-radius: 10px;
+    background: #1b1b1b;
+    color: var(--color-text-light);
+    font-weight: bold;
+    text-align: left;
+    transition: 0.3s;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.4);
+    display: block; 
+}
+
+.sidebar button[type="button"]:hover {
+    background: #292929;
+    transform: translateX(5px);
+}
+
+.sidebar a { /* Para o botão Sair */
+    width: 85%;
+    display: block;
+    margin: 0 auto;
+}
+
+/* --- ESTILOS DE RETRAÇÃO (Desktop) --- */
+
+/* Botão de Toggle (Hambúrguer dentro da Sidebar) */
+.toggle-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    font-size: 26px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    padding: 0; 
+}
+
+/* Sidebar recolhida */
+.sidebar.collapsed {
+    width: 60px; /* Largura recolhida */
+}
+
+/* Esconde o texto do botão no modo recolhido */
+.sidebar.collapsed button[type="button"]:not(.toggle-btn) {
+    width: 40px; 
+    height: 40px;
+    padding: 0;
+    margin: 15px auto;
+    font-size: 0; /* Esconde o texto do botão */
+    line-height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Área de Conteúdo */
+.content {
+    margin-left: 270px;
+    padding: 30px;
+    animation: fade 0.4s ease;
+    max-width: 900px; 
+    transition: margin-left 0.3s ease; /* Adiciona transição para acompanhar a sidebar */
+}
+
+/* Ajuste de margem do conteúdo para a sidebar recolhida */
+.sidebar.collapsed ~ .content {
+    margin-left: 80px; 
+}
+
+/* =======================================================
+    6. TELAS ESPECÍFICAS (LOGIN, EDIÇÃO, TCC)
+    ======================================================= */
+
+/* Caixa de Login */
+#loginForm {
+    max-width: 350px;
+    padding: 40px 30px;
+    border-radius: 12px;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border-dark);
+    box-shadow: 0 0 18px rgba(0,0,0,0.5);
+    text-align: center;
+}
+.texto-logo {
+    font-size: 15px;
+    color: var(--color-text-secondary);
+}
+
+/* Container para as caixas de edição lado a lado (Seção Editar) */
+.edit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 25px; 
+    margin-top: 30px;
+}
+
+/* Caixas de Edição e Criação de Contas */
+.edit-box {
+    background: var(--color-bg-secondary);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    box-sizing: border-box; 
+    width: auto; 
+    margin: 0; 
+}
+
+/* Ajuste para a caixa de criação de contas (centraliza no layout de coluna) */
+.form-create {
+    margin: 20px auto; 
+    width: 420px; 
+}
+
+.edit-box label {
+    color: #bbb;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.edit-box input {
+    width: 100%; 
+    box-sizing: border-box; 
+    padding: 10px;
+    border-radius: 6px;
+    background: #1a1a1a;
+    border: 1px solid var(--color-border-light);
+    color: var(--color-text-light);
+}
+
+.edit-box .btn {
+    width: 100%;
+    margin: 0;
+}
+
+
+/* =======================================================
+    7. FEED DE TCCs E REVISÃO (Professor)
+    ======================================================= */
+
+.tcc-feed {
+    padding: 0;
+}
+
+/* O CARD PRINCIPAL de Revisão */
+.review-card {
+    background: var(--color-bg-card);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border-left: 5px solid var(--color-accent-review); 
+    box-shadow: var(--shadow-dark);
+    transition: var(--transition-speed);
+}
+
+.review-card:hover {
+    background: #1a1a1a;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #222;
+    margin-bottom: 15px;
+    font-size: 1.05em;
+}
+
+.header-aluno {
+    font-weight: bold;
+    color: var(--color-text-light);
+}
+
+.header-data {
+    color: #aaa;
+    font-size: 0.9em;
+}
+
+.card-file-info {
+    margin-bottom: 20px;
+}
+
+.file-name a {
+    color: var(--color-accent-blue);
+    text-decoration: none;
+    transition: var(--transition-speed);
+    font-size: 1.1em;
+}
+
+.file-name a:hover {
+    text-decoration: underline;
+    color: #7abaff;
+}
+
+/* Formulário de Comentários */
+.coment-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    background: var(--color-bg-primary);
+    border-radius: 8px;
+    border: 1px solid #222;
+}
+
+.coment-box textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--color-border-light);
+    background: #1a1a1a;
+    color: var(--color-text-light);
+    resize: vertical;
+}
+
+.btn-small {
+    width: 200px;
+    align-self: flex-end; 
+}
+
+/* Histórico de Comentários */
+.comentarios-historico {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #222;
+}
+
+.history-title {
+    display: block;
+    margin-bottom: 15px;
+    color: #bbb;
+    font-size: 0.95em;
+}
+
+.comentario-item {
+    padding: 12px 15px;
+    border-radius: 6px;
+    background: var(--color-bg-secondary);
+    border-left: 3px solid var(--color-accent-comment); 
+    margin-bottom: 10px;
+}
+
+.comment-data {
+    display: block;
+    color: #888;
+    font-size: 0.8em;
+    margin-bottom: 5px;
+}
+
+.comment-text {
+    margin: 0;
+    line-height: 1.5;
+}
+
+
+/* =======================================================
+    8. ESTILOS DE PÁGINAS GERAIS (SEÇÕES DE CONTEÚDO)
+    ======================================================= */
+
+.secao-principal {
+    padding-top: 60px;
+    /* Imagem de fundo deve ser corrigida no caminho se necessário */
+    background-image: url('./uploads/img/capa.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.sobreposicao-hero {
+    background: rgba(0,0,0,0.45);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo-site {
+    font-size: 3.2em;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.descricao-principal {
+    max-width: 600px;
+    font-size: 1.15em;
+}
+
+/* Seções de Conteúdo */
+.secao-conteudo {
+    padding: 70px 0;
+}
+
+.container-conteudo {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.bloco-texto {
+    flex: 1;
+    font-size: 1.05em;
+    line-height: 1.6;
+}
+
+.bloco-imagem {
+    flex: 1;
+    min-height: 350px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+}
+
+.layout-invertido {
+    flex-direction: row-reverse;
+}
+
+/* RODAPÉ */
+.rodape-principal {
+    background: var(--color-bg-secondary);
+    border-top: 1px solid var(--color-border-dark);
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-text-secondary);
+}
+
+.logo-rodape {
+    color: var(--color-text-light);
+    font-size: 1.2em;
+}
+
+.contato-rodape p {
+    margin: 5px 0;
+}
+
+
+/* =======================================================
+    9. BOTÃO HAMBÚRGUER MOBILE
+    ======================================================= */
+.menu-mobile-toggle {
+    display: none; /* Escondido por padrão no desktop */
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1010; 
+    background: #1a1a1a;
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 1.2em;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+
+/* =======================================================
+    10. RESPONSIVIDADE (MOBILE)
+    ======================================================= */
+@media (max-width: 768px) {
+    
+    .menu-mobile-toggle {
+        display: block; /* Mostra o botão fora da sidebar no mobile */
+    }
+
+    .sidebar {
+        /* Esconde o menu para fora da tela */
+        width: 80%;
+        transform: translateX(-100%);
+        box-shadow: 10px 0 20px rgba(0,0,0,0.5);
+    }
+
+    /* Mostra o menu quando a classe 'open' é ativada pelo JS */
+    .sidebar.open {
+        transform: translateX(0);
+    }
+    
+    /* Esconde o botão de toggle do desktop no mobile */
+    .sidebar .toggle-btn {
+        display: none; 
+    }
+
+    /* Remove a margem fixa do menu para que o conteúdo ocupe 100% da tela */
+    .content, .sidebar.collapsed ~ .content {
+        margin-left: 0;
+        padding-top: 80px; /* Adiciona espaço para o botão mobile */
+    }
+    
+    /* Outros ajustes de empilhamento */
+    .card-header, .edit-grid {
+        flex-direction: column; 
+    }
+    
+    .header-data {
+        margin-top: 5px;
+    }
+    
+    .form-create {
+        width: 100%;
+    }
+}

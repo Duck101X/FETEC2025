@@ -1,0 +1,489 @@
+/* =========================================
+   BASE
+========================================= */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0d0d0d;
+    color: #fff;
+}
+
+/* =========================================
+   CENTRALIZAÇÃO
+========================================= */
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    animation: fade 0.3s;
+}
+
+/* =========================================
+   BOTÕES
+========================================= */
+.btn {
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    width: 220px;
+    background: linear-gradient(145deg, #1a1a1a, #0e0e0e);
+    color: #fff;
+    cursor: pointer;
+    transition: 0.25s;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    box-shadow: 
+        3px 3px 12px rgba(0,0,0,0.5),
+        -3px -3px 12px rgba(40,40,40,0.15);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(145deg, #262626, #111);
+}
+
+/* Botão secundário */
+.btn-secondary {
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #2e2e2e;
+    color: #fff;
+    transition: 0.25s;
+    border: 1px solid #444;
+}
+
+.btn-secondary:hover {
+    background: #3a3a3a;
+}
+
+/* =========================================
+   INPUTS
+========================================= */
+.input {
+    width: 270px;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #161616;
+    color: white;
+    transition: 0.25s;
+}
+
+.input:focus {
+    border-color: #777;
+    background: #1e1e1e;
+    outline: none;
+}
+
+/* =========================================
+   MENU LATERAL
+========================================= */
+.menu {
+    width: 250px;
+    height: 100vh;
+    background: #0f0f0f;
+    padding-top: 25px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    border-right: 1px solid #1d1d1d;
+    box-shadow: 5px 0 20px rgba(0,0,0,0.35);
+}
+
+.menu button {
+    width: 85%;
+    padding: 14px;
+    margin: 15px auto;
+    border: none;
+    border-radius: 10px;
+    background: #1b1b1b;
+    color: #fff;
+    font-weight: bold;
+    text-align: left;
+    transition: 0.3s;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.4);
+}
+
+.menu button:hover {
+    background: #292929;
+    transform: translateX(5px);
+}
+
+/* =========================================
+   CONTEÚDO
+========================================= */
+.content {
+    margin-left: 270px;
+    padding: 30px;
+    animation: fade 0.4s ease;
+}
+
+/* =========================================
+   ESTADOS / ANIMAÇÕES
+========================================= */
+.hidden { display: none; }
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* =========================================
+   CAIXAS DE EDIÇÃO
+========================================= */
+.edit-box {
+    background: #0f0f0f;
+    padding: 20px;
+    margin: 20px auto;
+    width: 420px;
+    border-radius: 12px;
+    border: 1px solid #1e1e1e;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+/* Inputs dentro de edit-box */
+.edit-box input {
+    width: 96%;
+    padding: 10px;
+    border-radius: 6px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: white;
+}
+
+/* Botão Salvar */
+.edit-box .btn {
+    width: 100%;
+    margin: 0;
+}
+
+/* Botão Excluir */
+.btn-delete {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #2b2b2b, #131313);
+    color: white;
+    text-align: center;
+    transition: 0.25s;
+    font-weight: bold;
+    box-shadow: 
+        3px 3px 10px rgba(0,0,0,0.4),
+        -3px -3px 10px rgba(40,40,40,0.15);
+}
+
+.btn-delete:hover {
+    background: #d62828;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   LOGIN
+========================================= */
+.center-screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loginForm {
+    max-width: 350px;
+    padding: 40px 30px;
+    border-radius: 12px;
+    background: #0f0f0f;
+    border: 1px solid #1d1d1d;
+    box-shadow: 0 0 18px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+.texto-logo {
+    font-size: 15px;
+    color: #ccc;
+}
+
+/* =========================================
+   SEÇÕES DO SITE (HOME, MODELOS ETC.)
+========================================= */
+.secao-principal {
+    padding-top: 60px;
+    background-image: url('./uploads/img/capa.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.sobreposicao-hero {
+    background: rgba(0,0,0,0.45);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo-site {
+    font-size: 3.2em;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.descricao-principal {
+    max-width: 600px;
+    font-size: 1.15em;
+}
+
+/* =========================================
+   SEÇÕES DE CONTEÚDO
+========================================= */
+.secao-conteudo {
+    padding: 70px 0;
+}
+
+.container-conteudo {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.bloco-texto {
+    flex: 1;
+    font-size: 1.05em;
+    line-height: 1.6;
+}
+
+.bloco-imagem {
+    flex: 1;
+    min-height: 350px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+}
+
+.layout-invertido {
+    flex-direction: row-reverse;
+}
+
+/* =========================================
+   RODAPÉ
+========================================= */
+.rodape-principal {
+    background: #0f0f0f;
+    border-top: 1px solid #1d1d1d;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    color: #ccc;
+}
+
+.logo-rodape {
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.contato-rodape p {
+    margin: 5px 0;
+}
+
+/* =========================================
+   FEED DO TCC
+========================================= */
+.tcc-feed {
+    background: #1a1a1a;
+    padding: 15px;
+    border-radius: 12px;
+    max-height: 350px;
+    overflow-y: auto;
+    border: 1px solid #2a2a2a;
+}
+
+.tcc-item {
+    background: #0f0f0f;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 13px;
+    border: 1px solid #222;
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+}
+
+.tcc-item a {
+    color: #4da3ff;
+    font-weight: bold;
+}
+
+.tcc-item a:hover {
+    text-decoration: underline;
+}
+
+.input-group {
+    width: 292px; /* Largura igual aos inputs normais */
+    margin: 10px 0; /* Espaçamento idêntico aos inputs */
+    
+    display: flex; /* Alinha o input e o botão lado a lado */
+    align-items: center; /* Centraliza verticalmente os itens no grupo */
+
+    /* Estilização da borda e fundo do grupo para imitar o .input */
+    border: 1px solid #333;
+    border-radius: 8px;
+    background: #161616;
+    transition: 0.25s;
+    height: 44px; /* Altura fixa para igualar os inputs */
+}
+
+/* Foco no grupo inteiro */
+.input-group:focus-within {
+    border-color: #777;
+    background: #1e1e1e;
+}
+
+/* Estilo do campo de senha (dentro do grupo) */
+.input-group input[type="password"],
+.input-group input[type="text"] { 
+    flex-grow: 1; /* Ocupa o máximo de espaço possível */
+    padding: 0 14px; /* Apenas padding horizontal */
+    border: none;
+    background: transparent; /* Usa o fundo do container */
+    color: white;
+    font-size: 14px;
+    outline: none;
+    height: 100%; /* Ocupa 100% da altura do grupo */
+}
+
+/* Estilo do botão de mostrar/esconder senha */
+.toggle-password {
+    background: transparent;
+    border: none; /* Remove a borda lateral */
+    padding: 0 10px; /* Padding apenas horizontal */
+    cursor: pointer;
+    /* Remover border-left: 1px solid #333; se não quiser a linha divisória */
+    transition: background 0.2s;
+    height: 100%; /* Ocupa 100% da altura do grupo */
+    display: flex; /* Para centralizar o ícone */
+    align-items: center; /* Centraliza o ícone verticalmente */
+    justify-content: center; /* Centraliza o ícone horizontalmente */
+    border-radius: 0 8px 8px 0; /* Apenas o lado direito arredondado */
+    width: 40px; /* Largura fixa para o botão do olho */
+}
+
+.toggle-password:hover {
+    background: #252525;
+    transform: none; 
+}
+
+/* Estilo da imagem do olho */
+.toggle-password img {
+    height: 18px; /* Tamanho do ícone */
+    width: 25px;
+    display: block; /* Remove espaços extras */
+    
+    
+    
+}
+
+
+/* =========================================
+    ESTILOS OTIMIZADOS PARA IFRAMES DE VÍDEO (YOUTUBE)
+    Responsividade e Integração com Dark Mode
+========================================= */
+
+/* Seção Contendo os Vídeos */
+.secao-card-video {
+    padding: 20px 0;
+    margin-bottom: 25px;
+    
+    /* Remove background branco e usa o fundo do body/content para integrar */
+    background-color: transparent; 
+    border-radius: 8px;
+}
+
+/* Container que centraliza e limita a largura dos cards */
+.container-card-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 750px; /* Um pouco mais estreito, mantendo o foco */
+    margin: 0 auto;
+}
+
+/* O card propriamente dito (a caixa que envolve o vídeo) */
+.card {
+    width: 100%;
+    /* Usa a paleta escura, similar a outros elementos */
+    background: #111;
+    border-radius: 12px; /* Borda mais arredondada */
+    
+    /* Sombra elegante em dark mode */
+    box-shadow: 
+        4px 4px 10px rgba(0,0,0,0.5),
+        -4px -4px 10px rgba(40,40,40,0.05);
+
+    overflow: hidden; 
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px); /* Efeito sutil para indicar interatividade */
+    box-shadow:
+        6px 6px 15px rgba(0,0,0,0.6),
+        -6px -6px 15px rgba(40,40,40,0.05);
+}
+
+/* Container de informação (onde o vídeo fica) - Aplica a Proporção 16:9 */
+.card-info {
+    padding: 0; /* Remove padding desnecessário daqui */
+    
+    /* Técnica de Aspect Ratio para garantir 16:9 */
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio (9/16 = 0.5625) */
+    height: 0;
+    overflow: hidden;
+    
+    border-radius: 12px; /* Borda do card-info */
+}
+
+/* O Iframe do vídeo (Absoluto para preencher o container com 16:9) */
+.video-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; 
+}
+
+/* --- Responsividade (Celular) --- */
+@media (max-width: 768px) {
+    /* Ajuste no container para ocupar mais a tela no mobile */
+    .container-card-video {
+        width: 100%;
+    }
+    
+    .card {
+        border-radius: 0; /* Opcional: bordas quadradas para ocupar toda a largura */
+        box-shadow: none;
+    }
+    
+    .card:hover {
+        transform: none; 
+    }
+}

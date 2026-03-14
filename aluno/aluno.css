@@ -1,0 +1,840 @@
+/* =========================================
+   BASE E PALETA GLOBAL
+========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #0c0c0c;
+    color: #eee;
+    line-height: 1.5;
+}
+
+/* Suavização */
+html {
+    scroll-behavior: smooth;
+}
+
+/* =========================================
+   CENTRALIZAÇÃO GLOBAL
+========================================= */
+.center-screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* =========================================
+   BOTÕES (Principal)
+========================================= */
+.btn {
+    padding: 12px 24px;
+    width: 220px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    color: #fff;
+
+    background: linear-gradient(145deg, #262626, #111);
+    box-shadow:
+        4px 4px 12px rgba(0,0,0,0.5),
+        -4px -4px 12px rgba(60,60,60,0.08);
+
+    transition: 0.25s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(145deg, #333, #171717);
+}
+
+/* Secundário */
+.btn-secondary {
+    background: #222;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: 0.25s;
+}
+
+.btn-secondary:hover {
+    background: #333;
+}
+
+/* Exclusão */
+.btn-delete {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    background: #2d0000;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.25s;
+
+    box-shadow:
+        4px 4px 12px rgba(0,0,0,0.45),
+        -4px -4px 12px rgba(70,0,0,0.1);
+}
+
+.btn-delete:hover {
+    background: #b30000;
+    transform: scale(1.03);
+}
+
+/* =========================================
+   INPUTS
+========================================= */
+.input, 
+.edit-box input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #161616;
+    color: #fff;
+    margin-bottom: 12px;
+    transition: 0.25s;
+    font-size: 14px;
+}
+
+.input:focus,
+.edit-box input:focus {
+    border-color: #777;
+    background: #202020;
+    outline: none;
+}
+
+/* =========================================
+   MENU LATERAL
+========================================= */
+.menu {
+    width: 250px;
+    height: 100vh;
+    background: #0f0f0f;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 25px;
+
+    border-right: 1px solid #1f1f1f;
+    box-shadow: 6px 0 18px rgba(0,0,0,0.4);
+}
+
+.menu button {
+    width: 85%;
+    padding: 14px;
+    margin: 14px auto;
+    display: block;
+
+    background: #1a1a1a;
+    border-radius: 8px;
+    border: none;
+    color: #ddd;
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.menu button:hover {
+    background: #333;
+}
+
+.menu a {
+    color: #ccc;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+    transition: 0.25s;
+}
+
+.menu a:hover {
+    background: #1b1b1b;
+    color: #fff;
+}
+
+/* =========================================
+   ÁREA DE CONTEÚDO
+========================================= */
+.content {
+    margin-left: 270px;
+    padding: 30px;
+    animation: fade 0.4s;
+}
+
+/* =========================================
+   EDIT BOX (FORMULÁRIOS DE EDIÇÃO)
+========================================= */
+.edit-box {
+    background: #111;
+    padding: 25px;
+    width: 430px;
+
+    margin: 20px auto;
+    border-radius: 14px;
+
+    border: 1px solid #222;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    box-shadow: 6px 6px 16px rgba(0,0,0,0.45);
+}
+
+.edit-box label {
+    color: #ccc;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.edit-box .btn {
+    width: 100%;
+    margin-top: 5px;
+}
+
+/* =========================================
+   ANIMAÇÕES
+========================================= */
+.fade-in {
+    animation: fade 0.4s;
+}
+
+@keyframes fade {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   HOME - HERO
+========================================= */
+.secao-principal {
+    min-height: 100vh;
+    background-image: url('./uploads/img/capa.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.sobreposicao-hero {
+    background: rgba(0,0,0,0.45);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    padding: 0 10%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo-site {
+    font-size: 3.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.descricao-principal {
+    max-width: 650px;
+    margin-bottom: 25px;
+    font-size: 1.1em;
+    color: #ddd;
+}
+
+/* =========================================
+   SEÇÕES INTERNAS
+========================================= */
+.secao-conteudo {
+    padding: 70px 0;
+}
+
+.container-conteudo {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    display: flex;
+    gap: 45px;
+    align-items: center;
+}
+
+.bloco-texto {
+    flex: 1;
+}
+
+.bloco-imagem {
+    flex: 1;
+    min-height: 350px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+}
+
+.imagem-tcc { 
+    background: url('./uploads/img/tcc.png') center/cover no-repeat;
+}
+
+.imagem-estagio,
+.imagem-estagio-2,
+.imagem-estagio-3,
+.imagem-estagio-4 {
+    background: url('./uploads/img/estagioimg.jpg') center/cover no-repeat;
+}
+
+.layout-invertido {
+    flex-direction: row-reverse;
+}
+
+/* =========================================
+   RODAPÉ
+========================================= */
+.rodape-principal {
+    background: #0d0d0d;
+    color: #aaa;
+    padding: 40px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #222;
+}
+
+.logo-rodape {
+    color: #fff;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.contato-rodape p {
+    margin: 6px 0;
+}
+
+/* =========================================
+   BOTÃO ANIMADO (BONITO)
+========================================= */
+button {
+  --button_radius: 0.75em;
+  --button_color: #e8e8e8;
+  --button_outline_color: #000;
+
+  border-radius: var(--button_radius);
+  border: none;
+  cursor: pointer;
+  background: var(--button_outline_color);
+}
+
+.button_top {
+  display: block;
+  padding: 0.75em 1.5em;
+  background: var(--button_color);
+  border: 2px solid var(--button_outline_color);
+
+  border-radius: var(--button_radius);
+  font-size: 17px;
+  font-weight: bold;
+
+  transform: translateY(-0.2em);
+  transition: transform 0.1s linear;
+}
+
+button:hover .button_top {
+  transform: translateY(-0.35em);
+}
+
+button:active .button_top {
+  transform: translateY(0);
+}
+
+/* =========================================
+   ESTILO DO FEED DE CORREÇÕES
+========================================= */
+
+/* O contêiner de cada correção (o "post" no feed) */
+.correcao-box {
+    width: 100%; /* Ocupa a largura total do content */
+    max-width: 800px; /* Limita a largura máxima para leitura */
+    margin: 20px 0; /* Espaço entre as correções */
+    padding: 20px 25px;
+    
+    /* Estilo de card elegante, similar aos botões */
+    background: #151515;
+    border-radius: 12px;
+    border-left: 5px solid #ffaa44; /* Borda de destaque para a esquerda (cor de aviso/ouro) */
+    
+    box-shadow:
+        5px 5px 15px rgba(0,0,0,0.5),
+        -5px -5px 15px rgba(40,40,40,0.05);
+
+    transition: transform 0.2s;
+}
+
+.correcao-box:hover {
+    transform: translateY(-3px); /* Efeito sutil ao passar o mouse */
+    box-shadow:
+        7px 7px 20px rgba(0,0,0,0.6),
+        -7px -7px 20px rgba(40,40,40,0.05);
+}
+
+/* Estilo para a seção de Metadados (Arquivo e Data) */
+.correcao-meta {
+    font-size: 0.9em;
+    color: #bbb;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #2a2a2a;
+    padding-bottom: 10px;
+    
+    display: flex;
+    justify-content: space-between; /* Alinha o arquivo e a data nas extremidades */
+}
+
+.meta-arquivo {
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.meta-data {
+    color: #ffaa44; /* Destaca a data */
+    font-style: italic;
+}
+
+/* Estilo para o conteúdo da mensagem de correção */
+.correcao-msg {
+    margin-top: 15px;
+    padding: 15px;
+    background: #0d0d0d; /* Fundo mais escuro para o bloco de texto */
+    border-radius: 8px;
+    line-height: 1.6;
+    white-space: pre-wrap; /* Preserva quebras de linha (nl2br) */
+    font-size: 15px;
+    border: 1px solid #222;
+}
+
+/* Estilo para o título da seção */
+#correcoes h2 {
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #333;
+    max-width: 800px;
+}
+
+/* =========================================
+   ESTILO DA SEÇÃO ENVIAR TCC
+========================================= */
+
+/* Limita a largura do conteúdo principal */
+#enviarTcc {
+    max-width: 800px;
+}
+
+#enviarTcc h2 {
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #333;
+}
+
+#enviarTcc h3 {
+    margin: 30px 0 15px 0;
+    color: #fff;
+    font-weight: 500;
+}
+
+/* --- CAIXA DE UPLOAD --- */
+.upload-box {
+    background: #151515;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #222;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.4);
+}
+
+.upload-info {
+    color: #bbb;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #2a2a2a;
+    font-size: 0.95em;
+}
+
+.upload-form {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Oculta o input de arquivo nativo e estiliza o label */
+.input-file-custom {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.btn-file-label {
+    /* Estilo de botão (similar ao .btn, mas como label) */
+    padding: 12px 18px;
+    flex-grow: 1;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 600;
+    color: #fff;
+    background: #2b2b2b;
+    transition: 0.2s;
+    border: 1px solid #444;
+}
+
+.btn-file-label:hover {
+    background: #3a3a3a;
+}
+
+.btn-upload {
+    width: 150px; /* Largura fixa para o botão Enviar */
+    padding: 12px;
+    margin: 0; /* Remove margem global do .btn */
+    /* Garante que o estilo de neomorfismo seja aplicado aqui */
+    box-shadow: 
+        3px 3px 8px rgba(0,0,0,0.5),
+        -3px -3px 8px rgba(60,60,60,0.08);
+}
+
+/* Mensagens de feedback */
+.msg-sucesso {
+    color: #64dd17; /* Verde vibrante */
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.msg-erro {
+    color: #ff6b6b; /* Vermelho vibrante */
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* --- FEED DE ARQUIVOS ENVIADOS (Itens) --- */
+/* --- FEED DE ARQUIVOS ENVIADOS (Itens) --- */
+.arquivo-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tcc-item {
+    background: #0f0f0f;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-left: 5px solid #4da3ff; 
+    
+    /* Display: flex para alinhar o nome e a data nas extremidades */
+    display: flex; 
+    justify-content: space-between; /* Empurra os metadados para as pontas */
+    align-items: center;
+    
+    box-shadow: 
+        2px 2px 8px rgba(0,0,0,0.3);
+    
+    transition: background 0.2s, transform 0.2s;
+}
+
+.tcc-item:hover {
+    background: #161616;
+    transform: translateY(-1px);
+}
+
+.item-meta {
+    flex-grow: 1;
+    display: flex; /* Novo Flexbox para o nome e a data */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-nome {
+    display: block;
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.05em;
+}
+
+/* Estilo do link no nome do arquivo */
+.item-nome a {
+    color: #fff; /* Cor do link igual ao texto */
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.item-nome a:hover {
+    color: #4da3ff; /* Cor azul no hover para indicar que é clicável */
+    text-decoration: underline;
+}
+
+
+.item-data {
+    color: #aaa;
+    font-size: 0.85em;
+    padding-left: 20px; /* Adiciona um espaço para separar do nome do arquivo */
+}
+
+/* Os estilos .btn-view e relacionados foram removidos. */
+
+/* =========================================
+    MENU LATERAL (RESTAURADO E MELHORADO)
+========================================= */
+/* O antigo .menu é agora a base da .sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #0f0f0f;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 25px;
+    box-sizing: border-box; /* Adicionado para calcular padding corretamente */
+    border-right: 1px solid #1f1f1f;
+    box-shadow: 6px 0 18px rgba(0,0,0,0.4);
+    
+    /* Adicionando estilos de retração/transição */
+    transition: width 0.3s ease, transform 0.3s ease;
+    overflow-x: hidden;
+    z-index: 1000;
+}
+
+/* Estilo dos botões no modo expandido/mobile */
+.sidebar button[type="button"] {
+    width: 85%;
+    padding: 14px;
+    margin: 14px auto;
+    display: block; /* Garante que o botão ocupe 100% da largura definida */
+
+    background: #1a1a1a; /* Cor original do menu */
+    border-radius: 8px;
+    border: none;
+    color: #ddd;
+    cursor: pointer;
+    font-size: 1em; /* Garante que o texto volte */
+
+    transition: 0.25s;
+    text-align: center; /* Centraliza o texto */
+}
+
+.sidebar button[type="button"]:hover {
+    background: #333;
+}
+
+/* Estilo do botão Sair (o <a> que envolve o <button>) */
+.sidebar a {
+    color: #ccc;
+    text-decoration: none;
+    padding: 0; /* Remove padding do <a>, o padding está no <button> */
+    display: block;
+    transition: 0.25s;
+}
+
+/* =========================================
+    SIDEBAR RETRÁTIL (ESTILOS ESSENCIAIS)
+    Apenas para o modo desktop recolhido
+========================================= */
+
+/* Botão de Toggle (Hambúrguer dentro da Sidebar para desktop) */
+.toggle-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 26px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    padding: 0; /* Limpa o padding que pode estar vindo do estilo geral */
+}
+
+/* Sidebar recolhida (Apenas no Desktop) */
+.sidebar.collapsed {
+    width: 60px; /* Largura recolhida */
+}
+
+/* Esconde o texto do botão no modo recolhido, mantendo o ícone */
+.sidebar.collapsed button[type="button"]:not(.toggle-btn) {
+    width: 40px; 
+    height: 40px;
+    padding: 0;
+    margin: 15px auto;
+    font-size: 0; /* Esconde o texto do botão */
+    line-height: 0;
+}
+
+/* Restaura o tamanho do ícone de toggle no modo recolhido */
+.sidebar.collapsed .toggle-btn {
+    font-size: 26px; 
+    width: 100%;
+}
+
+/* --- CONTEÚDO PRINCIPAL (content) --- */
+.content {
+    margin-left: 270px; /* Margem para o menu expandido (250px + 20px padding) */
+    padding: 30px;
+    transition: margin-left 0.3s ease;
+    animation: fade 0.4s;
+}
+
+.sidebar.collapsed ~ .content {
+    margin-left: 80px; /* Margem para o menu recolhido (60px + 20px padding) */
+}
+
+/* =========================================
+    BOTÃO HAMBÚRGUER MOBILE
+========================================= */
+.menu-mobile-toggle {
+    display: none; /* Escondido por padrão no desktop */
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1010; 
+    background: #1a1a1a;
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 1.2em;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+
+/* =========================================
+    RESPONSIVIDADE (MOBILE)
+========================================= */
+@media (max-width: 768px) {
+    
+    .menu-mobile-toggle {
+        display: block; /* Mostra o botão fora da sidebar no mobile */
+    }
+
+    .sidebar {
+        /* Esconde o menu para fora da tela */
+        width: 80%;
+        transform: translateX(-100%);
+        box-shadow: 10px 0 20px rgba(0,0,0,0.5);
+    }
+
+    /* Mostra o menu quando a classe 'open' é ativada pelo JS */
+    .sidebar.open {
+        transform: translateX(0);
+    }
+    
+    /* Esconde o botão de toggle do desktop no mobile, pois o .menu-mobile-toggle o substitui */
+    .sidebar .toggle-btn {
+        display: none; 
+    }
+
+    /* Remove a margem fixa do menu para que o conteúdo ocupe 100% da tela */
+    .content, .sidebar.collapsed ~ .content {
+        margin-left: 0;
+        padding-top: 80px; /* Adiciona espaço para o botão mobile */
+    }
+    
+    /* Garante que elementos de flexbox sejam empilhados */
+    .container-conteudo, .tcc-item, .correcao-meta {
+        flex-direction: column; 
+    }
+}
+
+/* =========================================
+    ESTILOS OTIMIZADOS PARA IFRAMES DE VÍDEO (YOUTUBE)
+    Responsividade e Integração com Dark Mode (Corrigido)
+========================================= */
+
+/* Seção Contendo os Vídeos */
+.secao-card-video {
+    padding: 20px 0; 
+    margin-bottom: 25px; 
+    background-color: transparent; 
+    border-radius: 8px;
+}
+
+/* Container que centraliza e limita a largura dos cards */
+.container-card-video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 750px; 
+    margin: 0 auto;
+}
+
+/* O card propriamente dito (a caixa que envolve o vídeo) */
+.card {
+    width: 100%;
+    background: #111; 
+    border-radius: 12px; 
+    
+    /* Sombra elegante em dark mode */
+    box-shadow: 
+        4px 4px 10px rgba(0,0,0,0.5),
+        -4px -4px 10px rgba(40,40,40,0.05);
+
+    overflow: hidden; 
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px); /* Efeito sutil ao passar o mouse */
+    box-shadow:
+        6px 6px 15px rgba(0,0,0,0.6),
+        -6px -6px 15px rgba(40,40,40,0.05);
+}
+
+/* Container de informação (onde o vídeo fica) - Garante a proporção 16:9 */
+.card-info {
+    padding: 0; /* Removido padding para corrigir a proporção 16:9 */
+    
+    /* Técnica de Aspect Ratio para garantir 16:9 */
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio (9/16 = 0.5625) */
+    height: 0;
+    overflow: hidden;
+}
+
+/* O Iframe do vídeo - Preenche 100% da área 16:9 */
+.video-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; 
+}
+
+/* --- Responsividade para Telas Menores (Celular) --- */
+@media (max-width: 768px) {
+    
+    .secao-card-video {
+        padding: 10px 0;
+    }
+
+    .container-card-video {
+        width: 100%; /* Ocupa a largura total no mobile */
+    }
+
+    .card {
+        box-shadow: none;
+        border-radius: 0; 
+    }
+
+    .card:hover {
+        transform: none; /* Remove o efeito de hover no mobile */
+    }
+}
