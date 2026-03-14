@@ -53,14 +53,23 @@ MySQL (estrutura de banco presente na pasta banco de dados)
 Servidor local (XAMPP / WAMP / Laragon)
 
 📂 Estrutura do Projeto
-StartTCC/
+FETEC2025/
+
 │
+
 ├── aluno/
+
+
 │   ├── uploads/
+
 │   ├── aluno_login.php
+
 │   ├── aluno.php
+
 │   ├── sair.php
+
 │   └── upload_tcc.php
+
 │
 ├── professor/
 │   ├── download.php
