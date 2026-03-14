@@ -61,35 +61,60 @@ FETEC2025/
 
 
 │   ├── uploads/
+
 │   ├── aluno_login.php
+
 │   ├── aluno.php
+
 │   ├── sair.php
+
 │   └── upload_tcc.php
 
 │
 ├── professor/
+
 │   ├── download.php
+
 │   ├── excluir.php
+
 │   ├── professor_login.php
+
 │   ├── professor.php
+
 │   ├── salvar.php
+
 │   └── salvar_comentario.php
+
 │
 ├── img/
+
 │   ├── Fundo.png
+
 │   ├── logo.png
+
 │   ├── olho.png
+
 │   └── olho-marcado.png
+
 │
 ├── banco de dados/
+
 │   └── (arquivos SQL do projeto)
+
 │
+
 ├── uploads/
+
 │
+
 ├── config.php
+
 ├── index.html
+
 ├── selection.html
+
 ├── script.js
+
 └── login_teste.php
 
 ⚙️ Como Executar o Projeto
