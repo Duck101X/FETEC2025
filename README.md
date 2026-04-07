@@ -48,7 +48,7 @@ Clonagem:
 
 ```
 Bash
-git clone https://github.com/seu-usuario/starttcc.git
+git clone https://github.com/Duck101X/FETEC2025.git
 ```
 Banco de Dados:
 
