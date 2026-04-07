@@ -1,173 +1,75 @@
-# FETEC2025
-FETEC2025 é uma plataforma web desenvolvida em PHP, HTML, CSS e JavaScript para facilitar a comunicação entre alunos e professores no processo de desenvolvimento de TCC. O sistema permite o envio, acompanhamento, correção e gerenciamento de trabalhos acadêmicos, oferecendo um ambiente organizado e prático para orientação e feedback dos projetos.
+🎓 FETEC2025 - Sistema de Gestão de TCC
+O FETEC2025 (StartTCC) é uma plataforma web desenvolvida para centralizar e organizar a interação entre orientadores e orientandos. O foco principal é otimizar o fluxo de envio, revisão e feedback de Trabalhos de Conclusão de Curso, eliminando a dispersão de arquivos em e-mails ou aplicativos de mensagem.
 
-📚 FETEC2025
-
-Plataforma web desenvolvida para facilitar a interação entre alunos e professores no processo de envio, acompanhamento e correção de Trabalhos de Conclusão de Curso (TCC).
-
-O sistema permite que alunos enviem seus trabalhos, acompanhem feedbacks e recebam orientações, enquanto professores podem revisar arquivos, deixar comentários e orientar os estudantes durante o desenvolvimento do TCC.
+📖 Sobre o Projeto
+O sistema oferece ambientes distintos e protegidos para que o processo de orientação seja transparente. Enquanto o aluno foca na evolução do texto e no cumprimento de prazos, o professor dispõe de ferramentas para baixar, analisar e registrar correções de forma centralizada.
 
 🚀 Funcionalidades
-👨‍🎓 Aluno
+👨‍🎓 Área do Aluno
+Autenticação Segura: Login individual para acesso ao painel.
 
-Login de aluno
+Gestão de Documentos: Upload de arquivos do TCC diretamente para o servidor.
 
-Envio de arquivos de TCC
+Central de Feedback: Visualização em tempo real das correções e comentários feitos pelo orientador.
 
-Visualização de correções e comentários
+Timeline de Progresso: Acompanhamento do status atual do trabalho.
 
-Acompanhamento do progresso do trabalho
+👨‍🏫 Área do Professor
+Painel de Orientação: Visualização de todos os trabalhos enviados pelos alunos.
 
-👨‍🏫 Professor
+Análise de Arquivos: Download rápido dos documentos para revisão.
 
-Login de professor
+Sistema de Correção: Cadastro de comentários detalhados e salvamento de notas/status.
 
-Download dos TCCs enviados
-
-Correção e comentários nos trabalhos
-
-Gerenciamento dos arquivos recebidos
-
-🌐 Sistema
-
-Separação de acesso entre aluno e professor
-
-Upload e download de arquivos
-
-Interface web responsiva
-
-Estrutura organizada em PHP, HTML, CSS e JavaScript
+Gestão de Arquivos: Possibilidade de excluir ou atualizar registros conforme a evolução do projeto.
 
 🛠️ Tecnologias Utilizadas
+Front-end: HTML5, CSS3 e JavaScript (para interações na interface e validações).
 
-HTML5
+Back-end: PHP (Lógica de servidor e gestão de sessões).
 
-CSS3
+Banco de Dados: MySQL (Relacional).
 
-JavaScript
+Ambiente de Servidor: Compatível com XAMPP, WAMP ou Laragon.
 
-PHP
-
-MySQL (estrutura de banco presente na pasta banco de dados)
-
-Servidor local (XAMPP / WAMP / Laragon)
-
-📂 Estrutura do Projeto
+📂 Estrutura de Pastas
+```Plaintext
 FETEC2025/
-
-│
-
-├── aluno/
-
-
-│   ├── uploads/
-
-│   ├── aluno_login.php
-
-│   ├── aluno.php
-
-│   ├── sair.php
-
-│   └── upload_tcc.php
-
-│
-├── professor/
-
-│   ├── download.php
-
-│   ├── excluir.php
-
-│   ├── professor_login.php
-
-│   ├── professor.php
-
-│   ├── salvar.php
-
-│   └── salvar_comentario.php
-
-│
-├── img/
-
-│   ├── Fundo.png
-
-│   ├── logo.png
-
-│   ├── olho.png
-
-│   └── olho-marcado.png
-
-│
-├── banco de dados/
-
-│   └── (arquivos SQL do projeto)
-
-│
-
-├── uploads/
-
-│
-
-├── config.php
-
-├── index.html
-
-├── selection.html
-
-├── script.js
-
-└── login_teste.php
-
-⚙️ Como Executar o Projeto
-
-1️⃣ Clonar o repositório
-
+├── 📁 aluno/          # Dashboard, login e lógica de upload do aluno
+├── 📁 professor/      # Dashboard, gestão de arquivos e comentários
+├── 📁 banco de dados/ # Scripts SQL para criação das tabelas
+├── 📁 img/            # Ativos visuais (Logos, fundos e ícones)
+├── 📁 uploads/        # Diretório de armazenamento dos arquivos enviados
+├── 📄 config.php      # Configuração centralizada da conexão com o BD
+└── 📄 index.html      # Landing page / Porta de entrada do sistema
+```
+⚙️ Instalação e Configuração
+Clonagem:
+```
+Bash
 git clone https://github.com/seu-usuario/starttcc.git
+```
+Banco de Dados:
 
-2️⃣ Colocar o projeto no servidor local
+Crie um banco de dados chamado starttcc no seu gerenciador (ex: phpMyAdmin).
 
-Coloque a pasta dentro do diretório do servidor.
+Importe o arquivo .sql localizado na pasta /banco de dados/.
 
-Exemplo no XAMPP:
+Conexão:
 
-htdocs/starttcc
-3️⃣ Configurar o banco de dados
-
-Abra o phpMyAdmin
-
-Crie um banco de dados
-
-Importe o arquivo SQL presente na pasta:
-
-banco de dados/
-4️⃣ Configurar conexão
-
-No arquivo:
-
-config.php
-
-Configure os dados de acesso ao banco:
-
+No arquivo config.php, ajuste as credenciais se necessário:
+```
+PHP
 $host = "localhost";
 $user = "root";
 $password = "";
 $database = "starttcc";
-5️⃣ Executar o projeto
+Diretório de Uploads:
+```
 
-Abra no navegador:
+Certifique-se de que as pastas uploads/ tenham permissões de escrita no seu servidor local.
 
-http://localhost/starttcc
-🎯 Objetivo do Projeto
+🎯 Objetivo e Impacto
+O projeto visa transformar a orientação acadêmica em um processo digital e rastreável, garantindo que nenhum feedback seja perdido e que o histórico de versões do TCC esteja sempre disponível para ambas as partes.
 
-O StartTCC foi desenvolvido como uma solução para melhorar a comunicação entre alunos e professores durante o processo de orientação de TCCs, centralizando envio de arquivos, correções e acompanhamento em uma única plataforma.
-
-📸 Interface
-
-O sistema possui:
-
-Página inicial com apresentação da plataforma
-
-Tela de seleção de login (Aluno / Professor)
-
-Área de envio de TCC para alunos
-
-Área de correção e gerenciamento para professores
+Desenvolvido por Duck101X 🚀
