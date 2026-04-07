@@ -4,7 +4,7 @@ O FETEC2025 (StartTCC) é uma plataforma web desenvolvida para centralizar e org
 📖 Sobre o Projeto
 O sistema oferece ambientes distintos e protegidos para que o processo de orientação seja transparente. Enquanto o aluno foca na evolução do texto e no cumprimento de prazos, o professor dispõe de ferramentas para baixar, analisar e registrar correções de forma centralizada.
 
-<h1>🚀 Funcionalidades</h1>
+<h2>🚀 Funcionalidades</h2>
 👨‍🎓 Área do Aluno
 Autenticação Segura: Login individual para acesso ao painel.
 
@@ -14,7 +14,7 @@ Central de Feedback: Visualização em tempo real das correções e comentários
 
 Timeline de Progresso: Acompanhamento do status atual do trabalho.
 
-<h1>👨‍🏫 Área do Professor</h1>
+<h2>👨‍🏫 Área do Professor</h2>
 Painel de Orientação: Visualização de todos os trabalhos enviados pelos alunos.
 
 Análise de Arquivos: Download rápido dos documentos para revisão.
@@ -43,7 +43,7 @@ FETEC2025/
 ├── 📄 config.php      # Configuração centralizada da conexão com o BD
 └── 📄 index.html      # Landing page / Porta de entrada do sistema
 ```
-<h1>⚙️ Instalação e Configuração</h1>
+<h2>⚙️ Instalação e Configuração</h2>
 Clonagem:
 
 ```
