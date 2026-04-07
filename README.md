@@ -1,10 +1,10 @@
-🎓 FETEC2025 - Sistema de Gestão de TCC
+<h1>🎓 FETEC2025 - Sistema de Gestão de TCC</h1>
 O FETEC2025 (StartTCC) é uma plataforma web desenvolvida para centralizar e organizar a interação entre orientadores e orientandos. O foco principal é otimizar o fluxo de envio, revisão e feedback de Trabalhos de Conclusão de Curso, eliminando a dispersão de arquivos em e-mails ou aplicativos de mensagem.
 
 📖 Sobre o Projeto
 O sistema oferece ambientes distintos e protegidos para que o processo de orientação seja transparente. Enquanto o aluno foca na evolução do texto e no cumprimento de prazos, o professor dispõe de ferramentas para baixar, analisar e registrar correções de forma centralizada.
 
-🚀 Funcionalidades
+<h1>🚀 Funcionalidades</h1>
 👨‍🎓 Área do Aluno
 Autenticação Segura: Login individual para acesso ao painel.
 
@@ -14,7 +14,7 @@ Central de Feedback: Visualização em tempo real das correções e comentários
 
 Timeline de Progresso: Acompanhamento do status atual do trabalho.
 
-👨‍🏫 Área do Professor
+<h1>👨‍🏫 Área do Professor</h1>
 Painel de Orientação: Visualização de todos os trabalhos enviados pelos alunos.
 
 Análise de Arquivos: Download rápido dos documentos para revisão.
@@ -23,7 +23,7 @@ Sistema de Correção: Cadastro de comentários detalhados e salvamento de notas
 
 Gestão de Arquivos: Possibilidade de excluir ou atualizar registros conforme a evolução do projeto.
 
-🛠️ Tecnologias Utilizadas
+<h1>🛠️ Tecnologias Utilizadas</h1>
 Front-end: HTML5, CSS3 e JavaScript (para interações na interface e validações).
 
 Back-end: PHP (Lógica de servidor e gestão de sessões).
@@ -43,8 +43,9 @@ FETEC2025/
 ├── 📄 config.php      # Configuração centralizada da conexão com o BD
 └── 📄 index.html      # Landing page / Porta de entrada do sistema
 ```
-⚙️ Instalação e Configuração
+<h1>⚙️ Instalação e Configuração</h1>
 Clonagem:
+
 ```
 Bash
 git clone https://github.com/seu-usuario/starttcc.git
@@ -69,7 +70,7 @@ Diretório de Uploads:
 
 Certifique-se de que as pastas uploads/ tenham permissões de escrita no seu servidor local.
 
-🎯 Objetivo e Impacto
+<h2>🎯 Objetivo e Impacto</h2>
 O projeto visa transformar a orientação acadêmica em um processo digital e rastreável, garantindo que nenhum feedback seja perdido e que o histórico de versões do TCC esteja sempre disponível para ambas as partes.
 
 Desenvolvido por Duck101X 🚀
